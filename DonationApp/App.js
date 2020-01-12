@@ -24,6 +24,8 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+import * as exampleData from "./ExampleData.json"
+
 const App: () => React$Node = () => {
   return (
     <>
@@ -39,6 +41,14 @@ const App: () => React$Node = () => {
             </View>
           )}
           <View style={styles.body}>
+            <View style={styles.sectionContainer}>
+              <Text style={styles.sectionTitle}>Example Data</Text>
+              <Text style={styles.sectionDescription}>
+              Organization: {exampleData.OrganizationName}
+              MissionStatement : {exampleData.MissionStatement}
+              Relevant Tags : {exampleData.Tags}
+              </Text>
+            </View>
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>Step One</Text>
               <Text style={styles.sectionDescription}>
