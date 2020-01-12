@@ -42,7 +42,6 @@ export default class SearchScreen extends React.Component {
             textStyle={styles.tabTextStyle}
             activeTabStyle={styles.activeTabStyle}
             activeTextStyle={styles.tabTextStyle}>
-                <OrganizationList name={'John'}/>
             </Tab>
             <Tab heading="POPULAR"
             tabStyle={styles.tabContainerStyle}
@@ -60,7 +59,7 @@ export default class SearchScreen extends React.Component {
             </Tab>
     </Tabs>) : 
             (<View>
-                <Text>Showing results ... </Text>  
+                <OrganizationList organization = {exampleData.Organizations} />
             </View>)}
         </View>
       </View>

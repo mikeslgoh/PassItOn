@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import colors from '../common/colors.styles';
 
 const styles = StyleSheet.create({
     searchBarContainer: {
@@ -10,13 +11,13 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
     },
     tabTextStyle: {
-        color: '#6202EE',
+        color: colors.main.color,
     },
     activeTabStyle: {
         backgroundColor: 'white',
     },
     tabBarUnderlineStyle: {
-        backgroundColor: '#6202EE',
+        backgroundColor: colors.main.color,
     }
   });
 
