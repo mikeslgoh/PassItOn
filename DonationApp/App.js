@@ -6,13 +6,14 @@
  * @flow
  */
 
-import React from 'react';
+import React, {Component} from 'react';
 import MainPage from './MainPage';
 //import Routes from './routes';
 import {
   SafeAreaView,
   StyleSheet,
   ScrollView,
+  FlatList,
   View,
   Text,
   StatusBar,
@@ -43,20 +44,33 @@ const App: () => React$Node = () => {
             </View>
           )}
           <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Example Data</Text>
-              <Text style={styles.sectionDescription}>
-              Organization: {exampleData.OrganizationName} {"\n"}
-              Mission Statement : {exampleData.MissionStatement} {"\n"}
-              Relevant Tags : {parseTags(exampleData.Tags)}
-              </Text>
-            </View>
+            <FlatList
+              data={exampleData.Organizations}
+              renderItem={({ item }) => <CreateOrganizationalBlock organization = {item} />}
+              keyExtractor={item => item.OrganizationID}
+              />
           </View>
         </ScrollView>
       </SafeAreaView>
     </>
   );
 };
+
+
+
+class CreateOrganizationalBlock extends Component
+{
+  render() {
+  return(
+    <View style={styles.sectionContainer}>
+      <Text style={styles.sectionTitle}> {this.props.organization.OrganizationName} </Text>
+      <Text style={styles.sectionDescription}>
+      Mission Statement : {this.props.organization.MissionStatement} {"\n"}
+      Relevant Tags : {parseTags(this.props.organization.Tags)}
+      </Text>
+    </View>
+    )}
+}
 
 function parseTags(array) {
   ReturnedString = ""
