@@ -1,39 +1,99 @@
-{
-  "Organizations": [
-    {
-      "OrganizationName": "Company A",
-      "OrganizationID": "001",
-      "MissionStatement": "To Let the example work",
-      "Tags": ["Tag A", "Tag B"],
-      "RelevantStrings": "Company A Tag A Tag B"
-    },
-    {
-      "OrganizationName": "Company B",
-      "OrganizationID": "00",
-      "MissionStatement": "To let the example work but better",
-      "Tags": ["Tag B", "Tag C"],
-      "RelevantStrings": "Company B Tag B Tag C"
-    },
-    {
-      "OrganizationName": "Company C",
-      "OrganizationID": "003",
-      "MissionStatement": "To be the very best",
-      "Tags": ["Tag A", "Tag B", "Tag C"],
-      "RelevantStrings": "Company C Tag A Tag B Tag C"
-    },
-    {
-      "OrganizationName": "Company D",
-      "OrganizationID": "004",
-      "MissionStatement": "Like no one ever was",
-      "Tags": ["Tag C"],
-      "RelevantStrings": "Company D Tag C"
-    },
-    {
-      "OrganizationName": "Company E",
-      "OrganizationID": "005",
-      "MissionStatement": "To catch them is my real test",
-      "Tags": ["Tag D", "Tag B"],
-      "RelevantStrings": "Company E Tag D Tag B"
-    }
+{ "Organizations" :  [
+  {
+    "OrganizationName": "Canadian Red Cross",
+    "OrganizationID": 1,
+    "MissionStatement": "The Canadian Red Cross mission is to improve the lives of vulnerable people by mobilizing the power of humanity in Canada and around the world.",
+    "Tags": "Clothing, Food, Monetary, Toys,",
+    "RelevantStrings": "Canadian Red Cross Clothing Food Monetary Toys",
+    "Location": "Ottawa",
+    "Logo": "http://zweb-s3.uploads.s3.amazonaws.com/carp/2014/03/Can_Red_Cross_RGB_En_000.png",
+    "Website": "https://www.redcross.ca/",
+    "PhoneNumber": "1-800-363-7305",
+    "EmailAddress": "myrcsupport@redcross.ca"
+  },
+  {
+    "OrganizationName": "The Salvation Army",
+    "OrganizationID": 2,
+    "MissionStatement": "The Salvation Army exists to share the love of Jesus Christ, meet human needs and be a transforming influence in the communities of our world.",
+    "Tags": "Clothing, Food, Cutlery, Books, Toys",
+    "RelevantStrings": "The Salvation Army Clothing Food Cutlery Books Toys",
+    "Location": "103 3833 HENNING DR BURNABY BC V5C 6N5",
+    "Logo": "https://salvationarmy.ca/wp-content/themes/sa2017/images/SA_GHT_red_hrz_72.png",
+    "Website": "https://salvationarmy.ca/",
+    "PhoneNumber": "604 299-3908",
+    "EmailAddress": "kelly_de_weerdt@can.salvationarmy.org"
+  },
+  {
+    "OrganizationName": "BC Children's Hospital",
+    "OrganizationID": 3,
+    "MissionStatement": "As an agency of the Provincial Health Services Authority, our mission, vision and values guide the work we do to improve the health of our patients and families.",
+    "Tags": "Food, Monetary, Toys, Books, Stationery",
+    "RelevantStrings": "BC Children's Hospital Food Monetary Toys Books Stationery",
+    "Location": "4480 Oak St, Vancouver, BC V6H 3N1",
+    "Logo": "http://www.bcchildrens.ca/_layouts/15/CUSTOM/EWI/assets/img/bcchildrenshospital/logo.png",
+    "Website": "http://www.bcchildrens.ca/",
+    "PhoneNumber": "604-875-2345",
+    "EmailAddress": "patientexperience@cw.bc.ca"
+  },
+  {
+    "OrganizationName": "VOKRA - Vancouver Orphan Kitten Rescue",
+    "OrganizationID": 4,
+    "MissionStatement": "AT VOKRA, WE RESCUE, HEAL, THEN PLACE CATS - FIRST IN OUR NETWORK OF FOSTER HOMES, THEN IN CAREFULLY MATCHED, LOVING, FOREVER HOMES. WE’RE A PASSIONATE, VOLUNTEER-DRIVEN CHARITY WITH EXTENSIVE CAT CARE EXPERIENCE.",
+    "Tags": "Food, Monetary, Toys, Time, Animals",
+    "RelevantStrings": "VOKRA - Vancouver Orphan Kitten Rescue Food Monetary Toys Time Animals",
+    "Location": "2028 Wall St, Vancouver, BC V5L 1B1",
+    "Logo": "https://static1.squarespace.com/static/5bbba72a2727be42cf12b47a/t/5bbba751f4e1fc178a1bc5cb/1578774677301/?format=1500w",
+    "Website": "https://www.vokra.ca/",
+    "PhoneNumber": "(604) 731-2913",
+    "EmailAddress": "info@vokra.ca"
+  },
+  {
+    "OrganizationName": "DRESS FOR SUCCESS",
+    "OrganizationID": 5,
+    "MissionStatement": "to empower women to achieve economic independence by providing a network of support, professional attire and the development tools to help women thrive in work and in life.",
+    "Tags": "Clothing, Monetary, Jewellery",
+    "RelevantStrings": "DRESS FOR SUCCESS Clothing Monetary Jewellery",
+    "Location": "675 W Hastings St, Vancouver, BC V6B 1N9",
+    "Logo": "https://3v21de1o34tw46wuhm20igha-wpengine.netdna-ssl.com/wp-content/uploads/2014/12/DFS_Vancouver-resized.jpg",
+    "Website": "https://vancouver.dressforsuccess.org/",
+    "PhoneNumber": "604.408.7923",
+    "EmailAddress": "vancouver@dressforsuccess.org"
+  },
+  {
+    "OrganizationName": "Canuck Place - Children's Hospice",
+    "OrganizationID": 6,
+    "MissionStatement": "Together , we can provide comfort and care to children living with life-threatening illnesses and the families who love them.",
+    "Tags": "Toys, Books, Monetary, Time",
+    "RelevantStrings": "Canuck Place - Children's Hospice Toys Books Monetary Time",
+    "Location": "1690 Matthews Avenue, Vancouver, BC Canada, V6J 2T2",
+    "Logo": "https://www.canuckplace.org/drive/uploads/2019/03/canuckplace-logo.jpg",
+    "Website": "https://www.canuckplace.org/",
+    "PhoneNumber": "604.731.4847",
+    "EmailAddress": "hello@canuckplace.org"
+  },
+  {
+    "OrganizationName": "Paws for Hope Animal Foundation",
+    "OrganizationID": 7,
+    "MissionStatement": "Paws for Hope provides care, support and education through programs and services, including financial support, to individuals and groups to enhance companion animal welfare in B.C.",
+    "Tags": "Animals, Toys, Food, Monetary",
+    "RelevantStrings": "Paws for Hope Animal Foundation Animals Toys Food Monetary",
+    "Location": "Maple Ridge RPO Square, Maple Ridge, BC, V2X 1P7",
+    "Logo": "https://pawsforhope.org/wp-content/uploads/2017/11/PAWs112.png",
+    "Website": "https://pawsforhope.org/",
+    "PhoneNumber": "604-396-9297",
+    "EmailAddress": "info@pawsforhope.org"
+  },
+  {
+    "OrganizationName": "British Columbia Society for the Prevention of Cruelty to Animals",
+    "OrganizationID": 8,
+    "MissionStatement": "Our mission is to protect and enhance the quality of life for domestic, farm and wild animals in BC.",
+    "Tags": "Animals, Toys, Food, Monetary",
+    "RelevantStrings": "British Columbia Society for the Prevention of Cruelty to Animals Animals Toys Food Monetary",
+    "Location": "1205 E 7th Ave, Vancouver, BC V5T 1R1, Canada",
+    "Logo": "https://spca.bc.ca/wp-content/uploads/BCSPCA-125-NoTagline.jpg",
+    "Website": "https://spca.bc.ca/",
+    "PhoneNumber": "(604) 879-7721",
+    "EmailAddress": "vancouver@spca.bc.ca"
+  }
   ]
 }

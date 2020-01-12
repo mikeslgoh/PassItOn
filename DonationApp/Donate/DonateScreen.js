@@ -1,13 +1,25 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import styles from './Donate.styles';
+import colors from '../common/colors.styles';
 
 export default class DonateScreen extends React.Component {
+static navigationOptions = {
+    title: 'Donate',
+    headerTitleStyle :{
+      textAlign: 'center',
+      alignSelf:'center',
+      color: 'white',
+    },
+    headerStyle:{
+        backgroundColor: colors.main.color,
+    },
+};
   render() {
     let options = [
         {
             name: 'Time',
-            navigateTo: '',
+            navigateTo: 'ItemSearch',
             isSelected: false,
         },
         {
@@ -36,7 +48,8 @@ export default class DonateScreen extends React.Component {
                 return (           
                 <View>
                     <TouchableOpacity
-                        style={styles.roundButton}>
+                        style={styles.roundButton}
+                        onPress={() => this.props.navigation.navigate(option.navigateTo)}>
                         <Text style={styles.buttonTextStyle}>{option.name}</Text>
                     </TouchableOpacity>
                 </View>

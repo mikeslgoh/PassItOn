@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, FlatList } from 'react-native';
+import { View, Text, FlatList, TouchableOpacity, Linking } from 'react-native';
 
 import styles from './OrganizationList.styles';
 
@@ -19,23 +19,19 @@ class CreateOrganizationalBlock extends React.Component
 {
   render() {
   return(
-    <View style={styles.sectionContainer}>
-      <Text style={styles.sectionTitle}> {this.props.organization.OrganizationName} </Text>
-      <Text style={styles.sectionDescription}>
-      Mission Statement : {this.props.organization.MissionStatement} {"\n"}
-      Relevant Tags : {parseTags(this.props.organization.Tags)}
-      </Text>
-    </View>
+    <TouchableOpacity
+    onPress={() => Linking.openURL(this.props.organization.Website)}>
+      <View style={styles.sectionContainer}>
+        <Text style={styles.sectionTitle}> {this.props.organization.OrganizationName} </Text>
+        <Text style={styles.sectionDescription}>
+        {this.props.organization.MissionStatement} {"\n\n"}
+        Relevant Tags : {parseTags(this.props.organization.Tags)}
+        </Text>
+      </View>
+    </TouchableOpacity>
     )}
 }
 
 function parseTags(array) {
-  ReturnedString = ""
-  Space = " "
-  for (let i = 0; i < array.length; i++)
-  {
-    ReturnedString+= array[i]
-    ReturnedString+= Space
-  }
-  return ReturnedString
+  return array.replace(/, /g, " ");
 }

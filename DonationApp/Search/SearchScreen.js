@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import { SearchBar } from 'react-native-elements';
 import { Tabs, Tab } from 'native-base';
+import colors from '../common/colors.styles';
 
 import OrganizationList from '../common/OrganizationList';
 
@@ -9,6 +10,18 @@ import styles from './SearchScreen.styles';
 import * as exampleData from "../data/ExampleData";
 
 export default class SearchScreen extends React.Component {
+  static navigationOptions = {
+    title: 'Search',
+    headerTitleStyle :{
+      textAlign: 'center',
+      alignSelf:'center',
+      color: 'white',
+    },
+    headerStyle:{
+        backgroundColor: colors.main.color,
+    },
+};
+
     state = {
         search: '',
     };
@@ -22,7 +35,7 @@ export default class SearchScreen extends React.Component {
     const { search } = this.state;
     let filteredOrganizations = exampleData.Organizations.filter(
       (organization) => {
-        return organization.RelevantStrings.includes(search);
+        return organization.RelevantStrings.toLowerCase().match(search);
       }
     );
     return (
@@ -42,6 +55,7 @@ export default class SearchScreen extends React.Component {
             textStyle={styles.tabTextStyle}
             activeTabStyle={styles.activeTabStyle}
             activeTextStyle={styles.tabTextStyle}>
+              
             </Tab>
             <Tab heading="POPULAR"
             tabStyle={styles.tabContainerStyle}
@@ -59,7 +73,7 @@ export default class SearchScreen extends React.Component {
             </Tab>
     </Tabs>) : 
             (<View>
-                <OrganizationList organization = {exampleData.Organizations} />
+                <OrganizationList organization = {filteredOrganizations} />
             </View>)}
         </View>
       </View>

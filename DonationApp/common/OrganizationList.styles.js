@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
       marginTop: 8,
       fontSize: 18,
       fontWeight: '400',
-      color: 'blue',
+      color: 'black',
     },
     highlight: {
       fontWeight: '700',
