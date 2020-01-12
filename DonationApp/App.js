@@ -5,107 +5,63 @@
  * @format
  * @flow
  */
-
 import React from 'react';
-import MainPage from './MainPage';
-//import Routes from './routes';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
+import { View } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import { createAppContainer } from 'react-navigation';
+import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 
+import HomeScreen from './Home/HomeScreen';
+import DonateScreen from './Donate/DonateScreen';
+import ProfileScreen from './Profile/ProfileScreen';
+import SearchScreen from './Search/SearchScreen';
 
-
-const App: () => React$Node = () => {
-  return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Example Data</Text>
-              <Text style={styles.sectionDescription}>
-              Organization: {exampleData.OrganizationName} {"\n"}
-              Mission Statement : {exampleData.MissionStatement} {"\n"}
-              Relevant Tags : {parseTags(exampleData.Tags)}
-              </Text>
-            </View>
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    </>
-  );
-};
-
-function parseTags(array) {
-  ReturnedString = ""
-  Space = " "
-  for (let i = 0; i < array.length; i++)
+const TabNavigator = createMaterialBottomTabNavigator(
   {
-    ReturnedString+= array[i]
-    ReturnedString+= Space
+    Home: {
+      screen: HomeScreen,  
+      navigationOptions:{  
+          tabBarLabel:'Home',  
+          tabBarIcon: ({ tintColor }) => (  
+              <View>  
+                  <Icon style={[{color: tintColor}]} size={25} name={'home'}/>  
+              </View>),  
+      }  
+    },
+    Donate: {
+      screen: DonateScreen,  
+      navigationOptions:{  
+          tabBarLabel:'Donate',  
+          tabBarIcon: ({ tintColor }) => (  
+              <View>  
+                  <Icon style={[{color: tintColor}]} size={25} name={'heart'}/>  
+              </View>),  
+      }  
+    },
+    Search: {
+      screen: SearchScreen,  
+      navigationOptions:{  
+          tabBarLabel:'Search',  
+          tabBarIcon: ({ tintColor }) => (  
+              <View>  
+                  <Icon style={[{color: tintColor}]} size={25} name={'search'}/>  
+              </View>),  
+      }  
+    },
+    Profile: {
+      screen: ProfileScreen,  
+      navigationOptions:{  
+          tabBarLabel:'Profile',  
+          tabBarIcon: ({ tintColor }) => (  
+              <View>  
+                  <Icon style={[{color: tintColor}]} size={25} name={'user-circle'}/>  
+              </View>),  
+      }  
+    }
   }
-  return ReturnedString
-}
+);
 
-const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
-  },
-  engine: {
-    position: 'absolute',
-    right: 0,
-  },
-  body: {
-    backgroundColor: Colors.white,
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
-  },
-});
+const App = createAppContainer(TabNavigator);
 
 export default App;
