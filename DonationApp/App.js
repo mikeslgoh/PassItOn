@@ -26,13 +26,13 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import * as exampleData from "./ExampleData.json"
+
 
 const App: () => React$Node = () => {
   return (
     //<Router routes = {routes}/>
     <View>
-      <MainPage organizations = {["hello"]}/>
+      <MainPage/>
     </View>
     );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { SearchBar } from 'react-native-elements';
-
+import * as exampleData from "./ExampleData.json"
 
 
 import {
@@ -32,9 +32,9 @@ export default class MainPage extends React.Component {
 
   render() {
     const { search } = this.state;
-    let filteredOrganizations = this.props.organizations.filter(
+    let filteredOrganizations = exampleData.Organizations.filter(
       (organization) => {
-        return // Condition where we return organization
+        return organization.RelevantStrings.includes(search);
       }
     );
     return (
@@ -55,7 +55,11 @@ export default class MainPage extends React.Component {
                   placeholder="Type Here..."
                   onChangeText={this.updateSearch}
                   value={search}
+                  platform = "android"
                 />
+              </View>
+              <View>
+                <NodeDisplayer organizations = {filteredOrganizations}/>
               </View>
             </View>
           </ScrollView>
@@ -65,6 +69,43 @@ export default class MainPage extends React.Component {
 }
 
 
+class NodeDisplayer extends React.Component{
+  render(){
+    return(
+      <View style = {styles.sectionTitle}>
+        <Text sectionTitle> I am a test node if you see me it
+        means the thing you are doing is working!
+         </Text>
+      </View>
+    )
+  }
+}
+
+// Nodes for each OrganizationNode
+// Will eventually have the fields appropriate to each organization JSON object
+class OrganizationNode extends React.Component{
+  render(){
+    return(
+      <View style = {styles.sectionTitle}>
+        <Text sectionTitle> Testing Testing </Text>
+      </View>
+    )
+  }
+}
+
+
+
+class DummyTestNode extends React.Component{
+  render(){
+    return(
+      <View style = {styles.sectionTitle}>
+        <Text sectionTitle> I am a test node if you see me it
+        means the thing you are doing is working!
+         </Text>
+      </View>
+    )
+  }
+}
 
 const styles = StyleSheet.create({
   scrollView: {
@@ -82,7 +123,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
   },
   sectionTitle: {
-    fontSize: 24,
+    fontSize: 50,
     fontWeight: '600',
     color: Colors.black,
   },
