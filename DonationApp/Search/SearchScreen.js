@@ -59,7 +59,7 @@ export default class SearchScreen extends React.Component {
             </Tab>
     </Tabs>) : 
             (<View>
-                <OrganizationList organization = {exampleData.Organizations} />
+                <OrganizationList organization = {filteredOrganizations} />
             </View>)}
         </View>
       </View>
