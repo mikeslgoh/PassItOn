@@ -1,14 +1,4 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
 import React from 'react';
-import MainPage from './MainPage';
-//import Routes from './routes';
 import {
   SafeAreaView,
   StyleSheet,
@@ -17,7 +7,6 @@ import {
   Text,
   StatusBar,
 } from 'react-native';
-
 import {
   Header,
   LearnMoreLinks,
@@ -26,9 +15,8 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import * as exampleData from "./ExampleData.json"
-
-const App: () => React$Node = () => {
+export default SecondaryPage extends React.Component(){
+render() {
   return (
     <>
       <StatusBar barStyle="dark-content" />
@@ -44,30 +32,20 @@ const App: () => React$Node = () => {
           )}
           <View style={styles.body}>
             <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Example Data</Text>
+              <Text style={styles.sectionTitle}>Learn More</Text>
               <Text style={styles.sectionDescription}>
-              Organization: {exampleData.OrganizationName} {"\n"}
-              Mission Statement : {exampleData.MissionStatement} {"\n"}
-              Relevant Tags : {parseTags(exampleData.Tags)}
+                Read the docs to discover what to do next:
               </Text>
             </View>
+            <LearnMoreLinks />
           </View>
         </ScrollView>
       </SafeAreaView>
     </>
   );
-};
-
-function parseTags(array) {
-  ReturnedString = ""
-  Space = " "
-  for (let i = 0; i < array.length; i++)
-  {
-    ReturnedString+= array[i]
-    ReturnedString+= Space
-  }
-  return ReturnedString
 }
+}
+
 
 const styles = StyleSheet.create({
   scrollView: {
@@ -107,5 +85,3 @@ const styles = StyleSheet.create({
     textAlign: 'right',
   },
 });
-
-export default App;
