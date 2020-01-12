@@ -44,43 +44,28 @@ const App: () => React$Node = () => {
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>Example Data</Text>
               <Text style={styles.sectionDescription}>
-              Organization: {exampleData.OrganizationName}
-              MissionStatement : {exampleData.MissionStatement}
-              Relevant Tags : {exampleData.Tags}
+              Organization: {exampleData.OrganizationName} {"\n"}
+              Mission Statement : {exampleData.MissionStatement} {"\n"}
+              Relevant Tags : {parseTags(exampleData.Tags)}
               </Text>
             </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
           </View>
         </ScrollView>
       </SafeAreaView>
     </>
   );
 };
+
+function parseTags(array) {
+  ReturnedString = ""
+  Space = " "
+  for (let i = 0; i < array.length; i++)
+  {
+    ReturnedString+= array[i]
+    ReturnedString+= Space
+  }
+  return ReturnedString
+}
 
 const styles = StyleSheet.create({
   scrollView: {
