@@ -1,14 +1,12 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import { SearchBar } from 'react-native-elements';
-import { Tabs, Tab } from 'native-base';
 import colors from '../../common/colors.styles';
 
 import OrganizationList from '../../common/OrganizationList';
 
 import styles from './ItemSearch.styles';
 import * as exampleData from "../../data/ExampleData";
-import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 
 export default class ItemSearch extends React.Component {
   static navigationOptions = {
@@ -24,6 +22,7 @@ export default class ItemSearch extends React.Component {
   };
     state = {
         search: '',
+        selectedTags: []
     };
 
     tagString = "Clothing, Food, Monetary, Toys, Cutlery, Books"
@@ -51,20 +50,38 @@ export default class ItemSearch extends React.Component {
                 marginBottom: '5%',
             }}
         />
+        {
+            this.state.selectedTags && this.state.selectedTags.map((tag) => {
+              return (
+                <View style={styles.roundButton}>
+                <Text style={styles.buttonTextStyle}>
+                    {tag}
+                    </Text>
+                </View>
+              );
+            })}
         <SearchBar
             onChangeText={this.updateSearch}
             value={search}
             platform = "android"
             containerStyle={styles.searchBarContainer}
         />
-        <View>
           {
             filteredTags.map((tag) => {
               return (
                 <View>
               <TouchableOpacity
               style={styles.roundButton}
-              onPress={() => {}}
+              onPress={() => {
+                let selected;
+                if (this.state.selectedTags === []) {
+                  selected = [tag]
+                } else {
+                  selected = this.state.selectedTags.push(tag);
+                }
+                this.setState({selectedTags: selected})
+                console.log(this.state.selectedTags);
+              }}
               >
                 <Text style={styles.buttonTextStyle}>
                     {tag}
@@ -73,7 +90,6 @@ export default class ItemSearch extends React.Component {
                   </View>
               );
             })}
-        </View>
         </View>
     );
   }
